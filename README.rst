@@ -8,18 +8,8 @@ faster than normal classes in Python.
 
 Of course this comes wiht drawbacks so use it wisely.
 
-<<<<<<< HEAD
 Run `python -m fastclass.bench` to get this:
-=======
-Run `python -m fastclass.bench` to get this::
 
-    Benchmarking object creation
-    <class 'fastclass.regular.SomeClass'>: 100%|█████████| 1000000/1000000 [00:00<00:00, 2471195.92it/s]
-    <class 'fastclass.regular.ChildClass'>: 100%|████████| 1000000/1000000 [00:00<00:00, 2315528.32it/s]
-    Benchmarking object method calling and usage
-    <class 'fastclass.regular.SomeClass'>: 100%|█████████| 1000000/1000000 [00:00<00:00, 1906948.22it/s]
-    <class 'fastclass.regular.ChildClass'>: 100%|█████████| 1000000/1000000 [00:01<00:00, 958928.20it/s]
->>>>>>> 5466dc43bcc8b410c6b7c85baa912cbfbd3c4a96
     Benchmarking object creation
     <class 'fastclass.regular.SomeClass'>: 100%|█████████| 1000000/1000000 [00:00<00:00, 2442567.71it/s]
     <class 'fastclass.regular.ChildClass'>: 100%|████████| 1000000/1000000 [00:00<00:00, 2235191.86it/s]
