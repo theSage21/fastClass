@@ -2,6 +2,7 @@ from collections import namedtuple
 
 SC = namedtuple("SomeClass", "x y add sub div")
 cc = namedtuple("ChildClass", "x y z add sub div")
+tc = namedtuple("ThirdClass", "x y z p add sub div")
 
 
 def SomeClass(x, y):
@@ -30,3 +31,18 @@ def ChildClass(x, y, z):
         return sc.div() / z
 
     return cc(x, y, z, add, sub, div)
+
+
+def ThirdClass(x, y, z, p):
+    cc = ChildClass(x, y, z)
+
+    def add():
+        return cc.add() + z
+
+    def sub():
+        return cc.sub() - z
+
+    def div():
+        return cc.div() / z
+
+    return tc(x, y, z, p, add, sub, div)
