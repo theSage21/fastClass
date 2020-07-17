@@ -2,19 +2,25 @@ FastClass
 =========
 
 
-Sometimes a class has a few objects and their methods are called a LOT of times. Here's an alternative way of doing 'classes'.::
+Sometimes a class has a few objects and their methods are called a LOT of
+times. Here's an alternative way of doing 'classes' in which method calling is
+faster than normal classes in Python.
+
+Of course this comes wiht drawbacks so use it wisely.
+
+Run `python -m fastclass.bench` to get this:
 
     Benchmarking object creation
-     <class 'fastclass.regular.SomeClass'>: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████| 10000000/10000000 [00:03<00:00, 2961583.20it/s]
-     <class 'fastclass.regular.ChildClass'>: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████| 10000000/10000000 [00:03<00:00, 2580019.40it/s]
-     Benchmarking object method calling and usage
-     <class 'fastclass.regular.SomeClass'>: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████| 10000000/10000000 [00:04<00:00, 2104839.72it/s]
-     <class 'fastclass.regular.ChildClass'>: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████| 10000000/10000000 [00:10<00:00, 982628.12it/s]
-     Benchmarking object creation
-     <function SomeClass at 0x7f0d25cc9510>: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████| 10000000/10000000 [00:06<00:00, 1461107.86it/s]
-     <function ChildClass at 0x7f0d25cc9bf8>: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████| 10000000/10000000 [00:12<00:00, 818011.17it/s]
-     Benchmarking object method calling and usage
-     <function SomeClass at 0x7f0d25cc9510>: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████| 10000000/10000000 [00:04<00:00, 2283938.92it/s]
-     <function ChildClass at 0x7f0d25cc9bf8>: 100%|████████████████████████████████████████████████████████████████████████████████████████████████| 10000000/10000000 [00:06<00:00, 1455436.51it/s]
+    <class 'fastclass.regular.SomeClass'>: 100%|█████████| 1000000/1000000 [00:00<00:00, 2471195.92it/s]
+    <class 'fastclass.regular.ChildClass'>: 100%|████████| 1000000/1000000 [00:00<00:00, 2315528.32it/s]
+    Benchmarking object method calling and usage
+    <class 'fastclass.regular.SomeClass'>: 100%|█████████| 1000000/1000000 [00:00<00:00, 1906948.22it/s]
+    <class 'fastclass.regular.ChildClass'>: 100%|█████████| 1000000/1000000 [00:01<00:00, 958928.20it/s]
+    Benchmarking object creation
+    <function SomeClass at 0x7fdf25a35510>: 100%|████████| 1000000/1000000 [00:00<00:00, 1418685.99it/s]
+    <function ChildClass at 0x7fdf25a35bf8>: 100%|████████| 1000000/1000000 [00:01<00:00, 809950.90it/s]
+    Benchmarking object method calling and usage
+    <function SomeClass at 0x7fdf25a35510>: 100%|████████| 1000000/1000000 [00:00<00:00, 2137436.26it/s]
+    <function ChildClass at 0x7fdf25a35bf8>: 100%|███████| 1000000/1000000 [00:00<00:00, 1368512.72it/s]
 
 
