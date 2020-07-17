@@ -6,7 +6,12 @@ Sometimes a class has a few objects and their methods are called a LOT of
 times. Here's an alternative way of doing 'classes' in which method calling is
 faster than normal classes in Python.
 
-Of course this comes wiht drawbacks so use it wisely.
+A common pattern in web apps is to have a Class per table in an ORM and then
+have a 'manager' class for that table. This manager is created only once and is
+used throughout the app which means method execution times are what matter and
+not instance creation time.
+
+Of course this comes with drawbacks so use it wisely.
 
 Run `python -m fastclass.bench` to get this::
 
