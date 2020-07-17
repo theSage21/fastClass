@@ -8,7 +8,7 @@ faster than normal classes in Python.
 
 Of course this comes wiht drawbacks so use it wisely.
 
-Run `python -m fastclass.bench` to get this:
+Run `python -m fastclass.bench` to get this::
 
     Benchmarking object creation
     <class 'fastclass.regular.SomeClass'>: 100%|█████████| 1000000/1000000 [00:00<00:00, 2442567.71it/s]
